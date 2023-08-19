@@ -1,1 +1,1 @@
-web: gunicorn ikshop.wsgi
+web: gunicorn ikshop.wsgi --log-file -
