@@ -1,0 +1,90 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<style type="text/css">
+    .cart{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.cart .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+</style>
+     <!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2 cart" style="">
+            <div class="layy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>Checkout</span>
+                                <h1>Billing / Shipping address</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active">Checkout</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section><br>
+        <!--End breadcrumb area-->
+
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-lg-3 mb-3"></div>
+                <div class="col-sm-6 col-lg-6 mb-3">
+                <section class="ik-form">
+                    <div class="checkout-address layy">
+                        <div class="title-left">
+                            <h3></h3>
+                        </div>
+                        <form class="needs-validation" novalidate method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="email">Email Address *</label>
+                                {% render_field addressForm.Email class="form-control" placeholder="Email" %}
+                                <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address">Phone</label>
+                                {% render_field addressForm.Mobile class="form-control" placeholder="Mobile" %}
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address2">Address</label>
+                                {% render_field addressForm.Address id="field5" class="form-control field-textarea" placeholder=" Building Number, city, Area" %} 
+                            </div>
+                    
+                            <div class="submit-button text-left">
+                                 <button class="btn-one" type="submit">Procced to pay</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    </section>
+                </div>
+
+            
+            </div>
+
+        </div>
+    </div>
+    <!-- End Cart -->
+{% endblock content %}

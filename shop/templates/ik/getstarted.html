@@ -1,0 +1,38 @@
+{% load static %}
+
+<style type="text/css">
+    #get_started_btn a{
+        background-color:orange;
+        padding:10px;
+        font-weight:bold;
+
+    }
+    #get_started_btn a:hover{
+        background-color:white;
+        padding:10px;
+        color:orange;
+
+    }
+    
+</style>
+<div class="p-4" style="background:url('{% static 'ikpixels/images/all-bg-title2.jpg' %}') no-repeat center center;">
+       <div class="container">
+           <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 order-2 order-lg-1 content">
+                    <div class="text-center p-4 ">
+                        <h1 style="font-weight:bold;color:white;">Do you have a business that needs to add articles, edit content, and  photos and more on your website? </h1>
+                    </div>
+                    <div id="get_started_btn" class="text-center">
+                        <a href="/aboutus">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 order-1 order-lg-2">
+                    <div>
+                        <img class="img-fluid" src="{%static 'ikpixels/images/ikp2.png' %}" alt="" />
+                    </div>
+                </div>
+           </div>
+       </div>
+</div>
+
+

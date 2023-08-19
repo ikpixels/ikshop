@@ -1,0 +1,82 @@
+{% extends 'admin1/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<div class="pagetitle">
+      <h1>Manage Products</h1><br>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/admin-dashboard">Home</a></li>
+          <li class="breadcrumb-item active">Products</li>
+        </ol>
+      </nav>
+</div><!-- End Page Title -->
+
+
+
+<div class="section dashboard">
+   <div class="card recent-sales overflow-auto">
+  <div class="filter">
+    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+      <li class="dropdown-header text-start">
+        <h6>Filter</h6>
+      </li>
+
+      <li><a class="dropdown-item" href="#">Today</a></li>
+      <li><a class="dropdown-item" href="#">This Month</a></li>
+      <li><a class="dropdown-item" href="#">This Year</a></li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">My site <span>| PJ</span></h5>
+    
+
+    <table class="table table-hover table-bordered  datatable">
+      <thead>
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">CATEGORY</th>
+          <th scope="col">WORK AREA</th>
+          <th scope="col">USERNAME</th>
+          <th scope="col">PASS CODE</th>
+          <th scope="col">CLIENT</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      {% for p in site %}
+  {% if p %}
+
+      <tr>
+        <td> {{p.name}}</td>
+        <td>{{p.category}}</td>
+        <td>{{p.work}}</td>
+        <td>{{p.username}}</td>
+        <td>{{p.password}}</td>
+        <td>{{p.client}}</td>
+        <td>
+          <a style="background-color:red;font-weight:bold;padding:9px;color:white;" href="{{p.url}}">View</a>
+        </td>
+
+      </tr>
+      {%else%}
+      <br><br><br>
+      <h1>No Products!!</h1>
+      {% endif %}
+      {% endfor %}
+    </table>
+                
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+{% endblock content %}

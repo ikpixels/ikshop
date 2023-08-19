@@ -1,0 +1,124 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+    .gallary{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.gallary .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+
+</style>
+
+!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2 gallary">
+            <div class="layy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>Our Projects</span>
+                                <h1>See our work</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active">Our work</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!--End breadcrumb area-->
+
+        <!--Start Main project area-->
+        <section class="main-project-area">
+            <div class="container">
+                <ul class="project-filter post-filter has-dynamic-filters-counter">
+                    
+                    <li data-filter=".filter-item" class="active"><span class="filter-text">All Projects</span></li>
+                    {% for c in category %}
+                    <li data-filter=".{{c}}"><span class="filter-text">{{c}}</span></li>
+                    {% endfor %}
+                </ul>
+                <div class="row filter-layout masonary-layout">
+                    <!--Start single project item-->
+
+                    {% for p in products %}
+                    <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 filter-item contem {{p.category}}">
+                        <div class="single-project-style4">
+                            <div class="img-holder">
+                                <div class="inner">
+                                    <img src="{{p.product_image.url}}" alt="Awesome Image">
+                                    <div class="overlay-box">
+                                        <div class="box">
+                                            <div class="link">
+                                                <a href="{% url 'work-detail' p.slug %}"><span class="icon-out"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay-content">
+                                    <div class="title">
+                                        <span>{{p}}</span>
+                                        <h3><a href="{% url 'work-detail' p.slug %}">{{p.category}}</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single project item-->
+                    {% empty %}
+                    <div>
+                        {% include 'ik/404.html' %}
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <!--_________________pagination_______________________-->
+                <div class="text-center">
+                    <div class="text-center">
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if products.has_previous %}
+                                
+                                <a href="?page={{ products.previous_page_number }}">
+                                    <i style="color:red;" class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                </a>
+
+                                {% endif %}
+
+                                <span class="current">
+                                Page {{ products.number }} of {{products.paginator.num_pages }}.
+                                </span>
+
+                                {% if products.has_next %}
+                                <a href="?page={{products.next_page_number }}">
+                                    <i style="color:red;" class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                </a>
+                                <a href="?page={{products.paginator.num_pages }}"></a>
+                                        {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+<!--____________________________end____________________________-->
+            </div>
+        </section>
+        <!--End Main project area-->
+{% endblock content %}

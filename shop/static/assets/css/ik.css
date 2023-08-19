@@ -1,0 +1,480 @@
+/* =======================================================================
+Template Name: IKpixels Technologies
+Author:  SmartEye Technologies
+Author URI: www.smart-eye.in
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for web template
+
+======================================================================= */
+/* ===================================== Import Less ================================== */
+
+/* ===================================== Basic CSS ================================== */
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+a:hover,
+a:focus,
+input,
+textarea {
+  text-decoration: none;
+  outline: none;
+}
+.cp {
+  cursor: pointer;
+}
+p {
+  margin-bottom: 0px;
+  width: 100%;
+}
+.layy {
+  padding: 30px;
+}
+h2 {
+  width: 100%;
+}
+.no-padding {
+  padding: 0px;
+}
+.no-margin {
+  margin: 0px;
+}
+.sec-title {
+  text-align: center;
+  padding-bottom: 45px;
+}
+.sec-title h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.sec-title p {
+  font-size: 14px;
+}
+
+
+/* ===================================== Key Features Style  ================================== */
+.key-feature-conten {
+  color: #FFF;
+}
+.key-feature-conten b {
+  font-size: 1rem;
+}
+.key-feature-conten p {
+  margin-top: 10px;
+}
+.key-feature-conten i {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+.key-feature-conten .col-md-3:nth-child(odd) {
+  padding: 0px;
+  text-align: center;
+}
+.key-feature-conten .col-md-3:nth-child(odd) .layy {
+  background:rgb(255,0,0,0.9);
+}
+.key-feature-conten .col-md-3:nth-child(even) {
+  padding: 0px;
+  text-align: center;
+}
+.key-feature-conten .col-md-3:nth-child(even) .layy {
+  background: rgb(255,69,0,0.9)
+}
+
+/* ===================================== Slider Style  ================================== */
+.slider {
+  overflow: hidden;
+  margin-top:0px;
+  border-top:solid red 1px;
+}
+@media screen and (max-width: 720px) {
+  .slider .mini_font_size {
+    display: none;
+  }
+  .slider .small_font_size {
+    display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+  .slider .btn-large {
+    display: none;
+  }
+  .slider .medium_font_size {
+    font-size: 10px !important;
+    margin-top: 20px !important;
+  }
+}
+/* ===================================== What-we-do Style  ================================== */
+.wat-we-do {
+  padding: 60px;
+  background-color: #FFF;
+  text-align: center;
+}
+@media screen and (max-width: 720px) {
+  .wat-we-do {
+    padding: 30px 10px;
+  }
+}
+.wat-we-do i {
+  padding: 20px;
+  border: 1px solid  #F2F2F2;
+  margin-bottom: 20px;
+  font-size: 40px;
+  color:red;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.wat-we-do p {
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.wat-we-do b {
+  font-size: 14px;
+}
+.wat-we-do .col-sm-4 {
+  padding: 30px;
+}
+/* ===================================== home-page-About-us Style  ================================== */
+.home-about {
+  height: 400px;
+  overflow: hidden;
+}
+.home-about .about-img {
+  padding: 0px;
+}
+@media screen and (max-width: 580px) {
+  .home-about {
+    height: auto;
+  }
+}
+
+.home-about .adout-det .layy {
+  background: rgb(255,0,0,0.9);
+  height: 100%;
+  color: #FFF;
+  padding: 40px;
+}
+.home-about .adout-det b {
+  font-size: 2rem;
+}
+.home-about .adout-det p {
+  text-align: justify;
+  text-indent: 25px;
+  margin-top: 15px;
+}
+/* ===================================== Home-page-blog Style  ================================== */
+.home-blog {
+  padding: 60px;
+  background-color: #FFF;
+}
+@media screen and (max-width: 720px) {
+  .home-blog {
+    padding: 10px;
+  }
+  .home-blog .sec-title {
+    padding-bottom: 20px;
+  }
+}
+.blog-1 {
+  background-color: #FFF;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.04);
+}
+.blog-1 .cdfik li {
+  float: left;
+  padding: 11.5px;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+}
+.blog-1 .sd-op {
+  background-color: #555fae;
+  text-align: center;
+  color: #FFF;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+.blog-1 .cdfik {
+  width: 100%;
+}
+.blog-1 .pof-det {
+  padding: 10px;
+  padding-left: 10px;
+  padding-left: 60px;
+}
+.blog-1 .pof-det b {
+  font-size: 13px;
+}
+.blog-1 .pof-det p {
+  font-size: 13px;
+  text-align: justify;
+  text-indent: 20px;
+  margin-top: 5px;
+}
+.blog-1 .sd-op b {
+  font-size: 22px;
+}
+/* ===================================== Testimonial Style  ================================== */
+
+.testimonial-container .layy {
+  background:rgb(255,0,0,0.8);
+  height: 100%;
+  width: 100%;
+  color: #FFF;
+  padding: 60px;
+}
+@media screen and (max-width: 720px) {
+  .testimonial-container .layy {
+    padding: 10px;
+  }
+}
+/* ===================================== Clinet-list Style  ================================== */
+.client-list {
+  background-color: #FFF;
+  padding: 60px;
+}
+@media screen and (max-width: 720px) {
+  .client-list {
+    padding: 20px;
+  }
+}
+/* ===================================== Footer Style  ================================== */
+footer {
+  padding: 40px;
+  background-color:black;
+  color: #FFF;
+}
+footer p {
+  color: #FFF;
+}
+footer .blog-foot-cont b {
+  font-size: 13px;
+}
+footer .blog-ro {
+  padding: 5px 0px;
+}
+footer h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+footer li {
+  padding: 6px;
+}
+@media screen and (max-width: 720px) {
+  footer {
+    padding: 20px;
+  }
+  footer h2 {
+    margin-top: 30px;
+  }
+}
+/* ===================================== Copyright Style  ================================== */
+.copy {
+  background-color: #3F4998;
+  padding: 20px;
+  color: #FFF;
+  text-align: center;
+}
+.copy a {
+  color: #FFF;
+}
+.copy img {
+  width: 20px;
+  margin-left: 7px;
+  margin-right: 2px;
+}
+/* ===================================== About Us(About Us Page) Style  ================================== */
+.about-us {
+  padding: 40px;
+  background-color: #FFF;
+}
+.about-us p {
+  text-align: justify;
+  font-size: 13px;
+  text-indent: 20px;
+}
+/* ===================================== Our Team Style  ================================== */
+.our-team {
+  padding: 40px;
+}
+.our-team .team-member {
+  padding: 10px;
+  background-color: #FFF;
+  text-align: center;
+}
+.our-team .team-member img {
+  margin-bottom: 5px;
+}
+.our-team .team-member p {
+  margin-top: 5px;
+}
+.our-team .team-member b {
+  padding: 5px;
+}
+.our-team .team-member ul li {
+  float: left;
+  padding: 5px;
+  width: 20%;
+  text-align: center;
+  border: 1px solid #CCC;
+}
+.our-team .team-member ul {
+  margin: 0px;
+  margin-top: 10px;
+}
+/* ===================================== Gallery Style  ================================== */
+.gallery-filter {
+  width: 100%;
+  text-align: center;
+}
+.gallery-filter .btn {
+  background-color: #FFF;
+}
+.gallery {
+  padding: 30px;
+  background-color: #FFF;
+}
+.gallery-title {
+  font-size: 36px;
+  color: #29509f;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+.gallery-title:after {
+  content: "";
+  position: absolute;
+  width: 7.5%;
+  left: 46.5%;
+  height: 45px;
+  border-bottom: 1px solid #29509f;
+}
+.filter-button {
+  font-size: 18px;
+  border: 1px solid #29509f;
+  border-radius: 5px;
+  text-align: center;
+  color: #29509f;
+  margin-bottom: 30px;
+}
+.filter-button:hover {
+  font-size: 18px;
+  border: 1px solid #29509f;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #29509f;
+}
+.btn-default:active .filter-button:active {
+  background-color:red;
+  color: white;
+}
+.port-image {
+  width: 100%;
+}
+.gallery_product {
+  margin-bottom: 30px;
+}
+
+/* ===================================== Count CSS ================================== */
+.our-capablit {
+  color:white;
+  background-size: 100%; }
+
+  .our-capablit .layy {
+    padding: 50px;
+    padding: 80px; }
+    
+    @media screen and (max-width: 940px) {
+      .our-capablit .layy {
+        padding: 30px 10px; } }
+  .our-capablit .cap-det {
+    text-align: center;
+    margin-bottom: 20px; }
+    .our-capablit .cap-det h6 {
+      margin-top: 30px;
+      color: #FFF;
+      margin-bottom: 20px;
+      font-family: "Glacial Indifference bold", "Open Sans", sans-serif; }
+    .our-capablit .cap-det p {
+      font-size: .85rem;
+      color: #FFF; }
+
+.progress {
+  width: 100px;
+  height: 100px;
+  background: none;
+  position: relative; }
+
+.progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.progress > span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1; }
+
+.progress .progress-left {
+  left: 0; }
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 0; }
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left; }
+
+.progress .progress-right {
+  right: 0; }
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right; }
+
+.progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .progress .progress-value .h2 {
+    font-size: 1.2rem;
+    margin-top: 13px;
+    color: #FFF; }

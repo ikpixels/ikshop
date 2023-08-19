@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <style type="text/css">
+     .mail-btn{
+      background-color:red;
+      padding:10px;
+      font-weight:bold;
+      color:white;
+      border-radius:5px;
+     }
+     .mail-btn:hover{
+      background-color:black;
+      color:white;
+     }
+  </style>
+</head>
+<body>
+   <section >
+      <div>
+         <div style="background-color:red;padding:10px;color:white;">
+            <h2>{{subject}}</h2>
+            <p>From {{name}} - {{email}} - {{phone}}</p>
+         </div><br>
+         <p>{{body}}</p><br><hr><br>
+      </div>
+   </section>
+</body>
+</html>

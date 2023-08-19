@@ -1,0 +1,55 @@
+{% extends 'admin1/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<div class="pagetitle">
+      <h1>Update Order status</h1><br>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/admin-dashboard">Home</a></li>
+          <li class="breadcrumb-item active">Update</li>
+        </ol>
+      </nav>
+</div><!-- End Page Title -->
+
+
+<div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-12">
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="contact-info-left">
+                     
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Select Any:</label>
+
+                                         {% render_field orderForm.status class="form-control" placeholder="Address" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-button">
+                                       <button class="ik-btn" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock content %}

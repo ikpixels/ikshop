@@ -1,0 +1,34 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+<style type="text/css">
+    .about_bg{
+        background-image: url("{% static 'ik/images/ik/hero-bg.jpg' %}");
+    }
+</style>
+ <!--Start breadcrumb area-->
+        <section class="breadcrumb-area about_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content clearfix">
+                            <div class="title">
+                                <h1>You've logged out <br> successfully!.</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-right">
+                                <ul class="clearfix">
+                                    <li><a href="/">Go Home</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End breadcrumb area-->
+{% endblock content %}

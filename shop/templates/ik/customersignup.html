@@ -1,0 +1,98 @@
+{% extends 'ik/base2.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+        <!--Start login register area-->
+        <section class="login-register-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
+                        
+                    </div>
+
+                    <div  class="col-xl-6 col-lg-12 col-md-12 col-sm-12 p-4">
+                        <section class="Account" >
+                        <div class="form registerp-4 p-2" style="background-color:white;">
+                            <div class="shop-page-title">
+                                <div style="color:black;" class="title">Register <span>Here</span></div>
+                            </div>
+                            <div class="row">
+                                <form action="#" method="post">
+                                    {% csrf_token %}
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            {% render_field userForm.username class="form-control" placeholder="Username" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            <input type="text" name="email" placeholder="Enter Mail id *">
+                                            <div class="icon-holder">
+                                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            {% render_field userForm.password class="form-control" placeholder="Password" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                            {% render_field customerForm.address class="form-control" placeholder="Address" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-field">
+                                             {% render_field customerForm.mobile class="form-control" placeholder="Contact" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-lg-5 col-md-5 col-sm-12">
+                                                <button class="btn-one" type="submit">Register Here</button>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                   </section>
+                </div>
+            </div>
+        </section>
+        <!--End login register area-->
+{% endblock content %}

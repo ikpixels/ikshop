@@ -1,0 +1,31 @@
+{% load static %}
+
+
+<!--Start Brand area-->
+        <section class="brand-area">
+            <div class="container">
+                <div class="sec-title with-text max-width text-center wow fadeInDown" data-wow-delay="100ms" data-wow-duration="1200ms">
+                    <p></p>
+                    <div class="title">Corporate<span> Clients</span></div>
+                    <p class="bottom-text">We have ore than 200 Clients.</p>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="brand-items-carousel owl-carousel owl-theme">{% for client in client %}
+                            <!--Start Single Brand Item-->
+                            <li class="single-brand-item wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+                                <a href="{{client.image.url}}"><img src="{{client.image.url}}" alt="Awesome Brand Image"></a>
+                                <div class="overlay-content">
+                                    <p>{{client}}</p>
+                                </div>
+                            </li>
+                            <!--End Single Brand Item-->
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Brand area-->
+
+

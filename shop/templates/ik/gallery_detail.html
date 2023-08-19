@@ -1,0 +1,182 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+    .gallary{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.gallary .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+
+</style>
+
+<!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2 gallary" style="">
+            <div class="layy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>Our Work</span>
+                                <h1>{{work}}</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="//gallary">Our work</a></li>
+                                    <li class="active">Single Work</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!--End breadcrumb area-->
+
+        <!--Start Project Description area-->
+        <section class="project-description-area">
+            <div class="pattern-bg wow slideInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <img src="{% static 'ik/images/pattern/project-description-pattern.jpg' %}" alt="Pattern Bg">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5">
+                        <div class="project-description-image-box">
+                            <img class="img-fluid" src="{{work.product_image.url}}" alt="Awesome Image">
+                        </div>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="project-description-content">
+                            <div class="sec-title">
+                                <p>Description</p>
+                                <div class="title">{{work}}</div>
+                            </div>
+                            <div class="inner-content">
+                               <p>{{work.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Project Description area-->
+
+        <!--Start Project Info Area-->
+        <section class="project-info-area">
+            <div class="pattern-bg wow slideInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <img src="{% static 'ik/images/pattern/project-info-patten.jpg' %}" alt="Pattern Bg">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="project-info-content">
+                            <div class="project-info-title">
+                                <h3>Project Info</h3>
+                            </div>
+                            <div class="inner-content">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-maps-and-location1"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Location</h4>
+                                            <span>{{work.district}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-calendar"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Project Year</h4>
+                                            <span>{{work.created_at}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-price"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Price Value</h4>
+                                            <span>MK {{work.price}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-group"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Project Client</h4>
+                                            <span>{{work.client}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-out"></span>
+                                        </div>
+                                        <div class="title">
+                                            {% if work.link %}
+                                            <a class="btn-one" href="{{work.link}}">View Demo</a>
+                                            {% else %}
+                                            <a class="btn-one" href="{{work.product_image.url}}">View Demo</a>
+                                            {% endif %}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="project-info-image-box">
+                            <img src="{{work.product_image.url}}" alt="Awesome Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Project Info Area-->
+
+       
+
+        <!--Start Similar projects Area-->
+        <section class="similar-projects-area">
+            <div class="container-fluid similar-projects-content">
+                <div class="similar-project-title text-center">
+                    <h2>Similar products</h2>
+                </div>
+                <div class="row">
+                    {% for p in products %}
+                    <!--Start Single Similar Project-->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="single-similar-project">
+                            <div class="img-holder">
+                                <img src="{{p.product_image.url}}" alt="Awesome Image">
+                            </div>
+                            <div class="title-holder">
+                                <span>{{p}}</span>
+                                <h3><a href="{% url 'work-detail' p.slug %}">{{p.category}}</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--End Single Similar Project-->
+                    
+                </div>
+            </div>
+        </section>
+        <!--End Similar projects Area-->
+{% endblock content %}

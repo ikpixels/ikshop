@@ -1,0 +1,45 @@
+{% extends 'ikpixels/homebase.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Web hosting</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">web hosting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+
+    <br><br><br>
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+       <div class="col-sm-12 col-lg-6">
+         <div>
+          <p class="text-justify">A web hosting service is a type of Internet hosting service that allows individuals and organizations to make their website accessible via the World Wide Web. Web hosts are companies that provide space on a server owned or leased for use by clients, as well as providing Internet connectivity, typically in a data center. Web hosts can also provide data center space and connectivity to the Internet for other servers located in their data center.</p>
+          <p>Our more basic hosting service inculdes small-scale file hosting, where small files can be uploaded via  a web interface.</p>
+          <p>A more complex service wich includes database support.  We generaly provide this service for larger sites that require more storage space.</p>
+         </div>
+       </div>
+
+       <div class="col-sm-12 col-lg-6">
+         <div class="animatedParent">
+          <img src="{%static 'ikpixels/images/hosting2.gif'%}" class="d-block w-100 animated growIn">
+         </div>
+       </div>
+     </div>
+      </div>
+    </section>
+    {% include 'ikpixels/getstarted.html' %}
+
+{% endblock content %}

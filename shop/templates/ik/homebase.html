@@ -1,0 +1,577 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- index 06:41:43 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <title>IKpixels</title>
+
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="{% static 'ik/css/style1.css' %}">
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="{% static 'ik/css/responsive.css' %}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ik/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'ik/images/favicon/favicon.ico' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'ik/images/favicon/favicon.ico' %}" sizes="16x16">
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=630b474c0b5e930012a9c33b&product=inline-share-buttons" async="async"></script>
+
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+ <style type="text/css">
+
+
+.dropbtn{
+  color:white;
+  font-size:14px;
+  font-weight:bold;
+  color:white;
+}
+..dropbtn:hover{
+    color:white;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+
+}
+
+.eapps-link{
+    display: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index:110;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown1:hover .dropdown-content {display: block;}
+
+
+.timer-area:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("{% static 'ik/images/pattern/timer-area-bg.jpg' %}");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: left;
+    content: "";
+    z-index: -1;
+}
+.preloader{ 
+    position:fixed; 
+    left:0px; 
+    top:0px; 
+    width:100%; 
+    height:100%; 
+    z-index:999999999999999999; 
+    background-color:#ffffff; 
+    background-position:center center; 
+    background-repeat:no-repeat; 
+    background-image:url("{% static 'ik/images/icon/preloader.gif' %}");
+}
+.preloader.style-two {
+    background-image: url("{% static 'ik/images/home-pages/preloader-2.html' %}");
+}
+.preloader.style-three {
+    background-image: url("%static 'ik/images/home-pages/preloader-3.html' %");
+}
+.preloader.style-four {
+    background-image: url("{%static 'ik/images/home-pages/preloader-4.html' %}");
+}
+.preloader.style-five {
+    background-image: url("{% static 'ik/images/home-pages/preloader-5.html' %}");
+}
+.main-menu .navigation > li > ul > li > a:after {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    bottom: 0;
+    content: "";
+    background: url("{%static 'ik/images/icon/dropdown-menu-arrow.png' %}");
+    width: 26px;
+    height: 11px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 500ms ease;
+    margin: 20px 0;
+}
+.main-menu .navigation > li > ul > li > ul > li a:before {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    bottom: 0;
+    content: "";
+    background: url("{%static 'ik/images/icon/dropdown-menu-arrow.png' %}");
+    width: 26px;
+    height: 11px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 500ms ease;
+    margin: 20px 0;
+}
+.main-menu .navbar-collapse > ul li.dropdown .dropdown-btn {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    width: 34px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    background: url("{%static 'ik/images/icon/submenu-icon.png' %}") center center no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+    border-radius: 3px;
+}
+.footer-shape-bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 695px;
+    width: 695px;
+    background-image: url("{%static 'ik/images/footer/footer-shape.png' %}");
+    z-index: -1;
+
+}
+.why-choose-title .button:after {
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    width: 10px;
+    height: 15px;
+    content: "";
+    background: url("{%static 'ik/images/icon/button-shape.png' %}");
+    z-index: -1;
+}
+.single-working-process-style2 .top-box:before{
+    position: absolute;
+    top: 11px;
+    right: 0;
+    width: 370px;
+    height: 113px;
+    background: url("{% static 'ik/images/pattern/working-process-item-bg.png' %}");
+    content: "";
+    z-index: -1;
+    opacity: 1;
+    transition: all 300ms ease 100ms;
+}
+.single-working-process-style2 .top-box:after{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 370px;
+    height: 99px;
+    background: url("{%static 'ik/images/pattern/working-process-item-hover-bg.png' %}");
+    content: "";
+    z-index: -1;
+    transition: all 900ms ease 100ms;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(-90deg) translateZ(-45px);
+    opacity: 0;
+}
+.breadcrumb-area .breadcrumb-menu ul li:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    width: 7px;
+    height: 2px;
+    background: url("{% static 'ik/images/icon/arrow.png' %}");
+    content: "";
+    margin: 14px 0;
+}
+.single-history-content .text-box .inner .date:before {
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 9px;
+    height: 10px;
+    background: url("{% static 'ik/images/icon/arrow-2.png' %}");
+    content: "";
+    z-index: -1;
+}
+ </style>
+</head>
+
+<body>
+    <div class="boxed_wrapper">
+
+        <div class="preloader"></div>
+
+        <!-- Start Top Bar style1 -->
+        <section class="top-bar-style1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-10 col-md-10">
+                        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                        <div class="elfsight-app-77132dc8-d4a3-43e4-a583-db808a0c9f1d"></div> 
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-2">
+                        <div class="clearfix">
+                             <div class="dropdown1 login-box">
+                            {% if user.is_authenticated %}
+                            <a style="color:white;"  class="dropbtn">
+                                <i class="fa fa-user s_color"></i>             {{request.user}} 
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-content">
+                                {% if user.is_superuser %}
+                                <a href="/admin-dashboard">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                Dashboard</a>
+                                <a href="/view-customer">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                Customers</a>
+                                <a href="/admin-view-booking">
+                                <i class="fa fa-truck" aria-hidden="true"></i>
+                                Orders</a>
+                                <a href="/admin-products">
+                                <i class="fa fa-product-hunt" aria-hidden="true"></i>
+                                Products</a>
+                                {% else %}
+                                <a href="/cart">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                Shopping Cart</a>
+                                <a href="/my-order">
+                                <i class="fa fa-truck" aria-hidden="true"></i>
+                                Track Orders</a>
+                                <a href="/edit-profile">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Edit Profile</a>
+                                {% endif %}
+                                <a href="/logout">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Sign Out</a>
+                            </div>
+                            {% else %}
+                            <a style="color:white;" class="dropbtn">Register Now <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <div class="dropdown-content">
+                                <a href="/customerlogin">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                  Sign In</a>
+                                <a href="/customersignup">
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                Sign Up</a>
+                            </div>
+                            {%endif%}
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Top Bar style1 -->
+
+        <!--Start Main Header-->
+        <header class="main-header header-style1" style="z-index:100;">
+
+            <div class="header-upper-style1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="inner-container clearfix">
+                                <div class="logo-box-style1 float-left">
+                                    <a href="/">
+                                        <img src="{% static 'ik/images/ik/logo1.png'%}" alt="Awesome Logo">
+                                    </a>
+                                </div>
+                                <div class="main-menu-box float-right">
+                                    <nav class="main-menu clearfix">
+                                        <div class="navbar-header clearfix">
+                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        </div>
+                                        <div class="navbar-collapse collapse clearfix">
+                                            <ul class="navigation clearfix">
+                                                <li class="current"><a href="/">Home</a></li>
+                                                <li ><a href="/aboutus">About Us</a>
+                                                   
+                                                </li>
+                                                <li class="dropdown"><a href="/">Services</a>
+                                                    <ul>
+                                                        <li><a href="/webdesign">Web Design</a></li>
+                                                        <li><a href="/webdev">Development</a></li>
+                                                        <li><a href="/graphics">Branding</a></li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                                <li><a href="/gallary">Our work</a></li>
+                                                <li><a href="/shop">Shop</a></li>
+                                                <li><a href="/contactus">Contact</a></li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                    <div class="mainmenu-right">
+                                        <div class="outer-search-box">
+                                            <div class="seach-toggle"><i class="fa fa-search"></i></div>
+                                            <ul class="search-box">
+                                                <li>
+                                                    <form method="get" action="/search">
+                                                        <div class="form-group">
+                                                            <input type="search" name="query"placeholder="Search Here" required>
+                                                            <button type="submit"><i class="fa fa-search"></i></button>
+                                                        </div>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart-box">
+                                            <a href="/cart"><span class="icon-bag"><span class="number">{{ product_count_in_cart }}</span></span></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+        </header>
+        <!--End Main Header-->
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+          <!--Start footer area Style4-->
+        <footer class="footer-area style4">
+            <div class="container">
+                <div class="row">
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="single-footer-widget marbtm50-s4">
+                            <div class="our-info-box">
+                                <div class="footer-logo">
+                                    <a href="/">
+                                        <img src="{% static 'ik/images/ik/logo2.png' %}" alt="Awesome Logo">
+                                    </a>
+                                </div>
+                                <div class="text">
+                                    <p>IKpixels is a reputed and well known company offering website design, website development,graphic design and other digital marketing solutions in Malawi</p>
+                                </div>
+                                <div class="follow-us-social-links clearfix">
+                                    <span>Follw Us On:</span>
+                                    <ul>
+                                        <li><a href="https://web.facebook.com/ikpixels">Facebook</a></li>
+                                        <li><a href="https://web.facebook.com/ikpixels">Twitter</a></li>
+                                        <li><a href="https://www.linkedin.com/in/isaac-kakodwa-b47538a4/">Linkein</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="single-footer-widget s4">
+                            <div class="title-style2">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="usefull-links">
+                                <ul class="float-left">
+                                    <li><a href="/webdesign">Website Design</a></li>
+                                    <li><a href="/webdev">Development</a></li>
+                                    <li><a href="/graphics">Branding</a></li>
+                                </ul>
+                                <ul class="float-left borders-left">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/aboutus">Who we are</a></li>
+                                    <li><a href="/gallary">Our work</a></li>
+                                    <li><a href="/shop">IKpixel Shop</a></li>
+                                    <li><a href="/contactus">Contact</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                    <!--Start single footer widget-->
+                    <div class="col-xl-4 col-lg-3 col-md-12 col-sm-12">
+                        <div class="single-footer-widget pdtop50-s4">
+                            <div class="title-style2">
+                                <h3>Subscribe Us</h3>
+                            </div>
+                            <div class="subscribe-box">
+                                <form class="subscribe-form newsletter-box" action="{% url 'aboutus' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="email" name="Email" placeholder="Your Email">
+                                    <p id="Subscribe" style="color:orange;display:none;">Submited successifuly.</p>
+                                    <button class="btn-one" type="submit">Subscribe<span class="flaticon-next"></span></button>
+                                </form>
+                                <div class="text">
+                                    <p><span>*</span>Subscribe us and get latest news and updates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                </div>
+            </div>
+        </footer>
+        <!--End footer area style4-->
+
+        <!--Start Footer Contact Info Area-->
+        <section class="footer-contact-info-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="footer-contact-info clearfix">
+                            <li>
+                                <div class="single-footer-contact-info">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="icon-global"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Balaka, Near Balaka secondary School, Southern Region, Malawi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="single-footer-contact-info">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="icon-support1"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>+265 993 344 416<br> <span>Mon - Friday:</span> 9.00am to 6.00pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="single-footer-contact-info">
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="icon-shipping-and-delivery"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>ikpixels.py@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Footer Contact Info Area-->
+
+        <!--Start footer bottom area-->
+        <section class="footer-bottom-area style3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="copyright-text text-center">
+                            <p> Copyright &copy; IKpixels <script>document.write(new Date().getFullYear());</script>, All rights reserved </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End footer bottom area-->
+
+      
+    </div>
+
+
+    <div class="scroll-to-top-style2 scroll-to-target" data-target="html">
+        <span class="fa fa-angle-up"></span>
+    </div>
+
+
+
+    <script src="{% static 'ik/js/jquery.js' %}"></script>
+    <script src="{% static 'ik/js/appear.js' %}"></script>
+    <script src="{% static 'ik/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'ik/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'ik/js/isotope.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.enllax.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.paroller.min.js' %}"></script>
+    <script src="{% static 'ik/js/owl.js' %}"></script>
+    <script src="{% static 'ik/js/validation.js' %}"></script>
+    <script src="{% static 'ik/js/wow.js' %}"></script>
+
+    <!---
+<script src="js/gmaps.js"></script>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
+<script src="js/mapapi.js"></script> 
+--->
+    <script src="{% static 'ik/js/map-helper.js' %}"></script>
+
+    <script src="{% static 'ik/assets/language-switcher/jquery.polyglot.language.switcher.js' %}"></script>
+    <script src="{% static 'ik/assets/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'ik/assets/html5lightbox/html5lightbox.js' %}"></script>
+
+    <!--Revolution Slider-->
+    <script src="{% static 'ik/plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.actions.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.carousel.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'ik/js/main-slider-script.js' %}"></script>
+
+    <!-- thm custom script -->
+    <script src="{%static 'ik/js/custom.js'%}"></script>
+    <script src="{%static 'ik/js/ajax.js'%}"></script>
+
+
+
+</body>
+
+
+<!-- index 06:41:43 GMT -->
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<div class="container">
+    <div class="row my-5">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Featured Products</h1>
+                        <p>Get best products from our shop</p>
+                    </div>
+                    <div  class="featured-products-box owl-carousel owl-theme">
+                        {% for p in products %}
+                        <div class="item">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <img src="{{p.product_image.url}}" class="img-fluid" alt="Image">
+                                    <div class="mask-icon">
+                                        <ul>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                        </ul>
+                                        <a class="cart" href="{% url 'add-to-cart' p.id  %}">Add to Cart</a>
+                                    </div>
+                                </div>
+                                <div class="why-text " style="background-color:white;">
+                                    <h4>{{p.name}}</h4>
+                                    <h5>MK {{p.price}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+
+                    </div>
+                </div>
+            </div>
+        </div>

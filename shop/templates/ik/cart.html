@@ -1,0 +1,157 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+    .cart{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.cart .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+</style>
+
+<!--Start breadcrumb area-->
+        <section class="breadcrumb-area cart style2" >
+            <div class="layy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>Cart</span>
+                                <h1>Your Shopping cart</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/shop">Shop</a></li>
+                                    <li class="active">Shopping Cart</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!--End breadcrumb area-->
+
+
+{% if total >= 1 %}
+        <!--Start cart area-->
+        <section class="cart-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="table-outer">
+                            <table class="cart-table">
+                                <thead class="cart-header">
+                                    <tr>
+                                        <th class="prod-column">Products</th>
+                                        <th>&nbsp;</th>
+                                        
+                                        <th class="price">Price</th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for p in c_products %}
+                                    {% if p %}
+                                    <tr>
+                                        <td colspan="2" class="prod-column">
+                                            <div class="column-box">
+                                                <div class="prod-thumb">
+                                                    <a href="#"><img src="{{p.product_image.url}}" alt=""></a>
+                                                </div>
+                                                <div class="title">
+                                                    <h3 class="prod-title">{{p}}</h3>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="price">MK {{p.price}}</td>
+                                        <td class="sub-total">MK {{p.price}}</td>
+                                        <td>
+                                            <div class="remove">
+                                                <div class="checkbox">
+                                                    <a class="btn-one" cl href="{% url 'remove-from-cart' p.id  %}">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+
+                                                    </a>
+                                                   
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {%else%}
+                                <br><br><br>
+                                <h1>no products</h1>
+                                 {% endif %}
+                                 {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+         
+
+                <div class="row cart-bottom">
+                    <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12">
+                        
+                    </div>
+                    <!--Start cart total -->
+                    <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12">
+                        <div class="cart-total">
+                            <div class="shop-page-title">
+                                <div class="title">Cart <span>Totals</span></div>
+                            </div>
+                            <ul class="cart-total-table">
+                                <li class="clearfix">
+                                    <span class="col col-title">Cart Subtotal</span>
+                                    <span class="col">MK {{total}}</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="col col-title">Shipping and Handling</span>
+                                    <span class="col">MK 0.00</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="col col-title">Order Total</span>
+                                    <span class="col">MK {{total}}</span>
+                                </li>
+                            </ul>
+                            <a class="btn-one checkout-btn" href="/customer-address">Proceed to Checkout</a>
+                            <button ></button>
+                        </div>
+                    </div>
+                    <!--End cart total -->
+                </div>
+
+            </div>
+        </section>
+        <!--End cart area-->
+
+    {% else %}
+    <div>
+        <div class="container p-4">
+            <div class="text-center">
+                <img src="{% static 'ikpixels/images/emptycart.png'%}">
+                <h4><b>Your Cart is empty!!!</b></h4><br>
+                <a href="/shop" class="btn-one">Shop Now</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- End Cart -->
+{% endblock content %}

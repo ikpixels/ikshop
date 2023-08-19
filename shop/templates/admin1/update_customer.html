@@ -1,0 +1,88 @@
+{% extends 'admin1/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<div class="pagetitle">
+      <h1>Update Customer Details</h1><br>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/admin-dashboard">Home</a></li>
+          <li class="breadcrumb-item active">Update</li>
+        </ol>
+      </nav>
+</div><!-- End Page Title -->
+
+
+
+    <!-- Start Contact Us  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-info-left">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">First Name</label>
+                                        {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Last Name</label>
+                                        {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        {% render_field customerForm.mobile class="form-control" placeholder="Contact" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Address</label>
+                                        {% render_field customerForm.address class="form-control" placeholder="Address" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Username</label>
+                                        {% render_field userForm.username class="form-control" placeholder="Username" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        {% render_field userForm.password class="form-control" placeholder="Password" %}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <button class="ik-btn" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+      
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+
+
+
+{% endblock content %}

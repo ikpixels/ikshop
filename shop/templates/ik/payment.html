@@ -1,0 +1,120 @@
+{% extends 'ik/homebase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<style type="text/css">
+    .cart{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.cart .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+</style>
+     <!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2 cart" style="">
+            <div class="layy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>Checkout</span>
+                                <h1>Payment</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active">Pay</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section><br>
+        <!--End breadcrumb area-->
+
+    <div class="container">
+        <div class="row p-4">
+             <div class="col-lg-6">
+                 <section class="ik-form">
+                     <div class="layy">
+                         <h4 style="color:orange;">
+              <a href="https://www.tnm.co.mw/ui/tnm-october/index.php/mpamba">
+              <img src="{% static 'ik/images/ik/tnm.jpg' %}" class="rounded" width="30">
+            </a>
+            TNM Mpamba</h4><hr>
+                    <ul>
+                       <li>Dial *444#</li>
+                       <li>Select 1 for send money</li>
+                       <li>Select 1 for TNM Mpamba</li>
+                       <li>Select 1 for send to wallet then enter the phone number <strong>0882935706</strong>.</li>
+                       <li>Account Name : Isaac Kakodwa</li>
+                    </ul><br>
+                    <h4 style="color:orange;">
+                      <a href="https://www.tnm.co.mw/ui/tnm-october/index.php/mpamba">
+                      <img src="{% static 'ik/images/ik/airtel.jpg' %}" class="rounded" width="30">
+                       </a>
+                    Airtel Money</h4><hr>
+                    <ul>
+                       <li>Dial *211#</li>
+                       <li>Select 2 for send money</li>
+                       <li>Select 1 for Airtel Number</li>
+                       <li>Select 1 for number then enter the phone number <strong>0993344416</strong>.</li>
+                       <li>Account Name : Isaac Kakodwa</li>
+                    </ul><br>
+                    <h4 style="color:orange;">
+                      <a href="https://www.tnm.co.mw/ui/tnm-october/index.php/mpamba">
+                      <img src="{% static 'ik/images/ik/nb.png' %}" class="rounded" width="30">
+                       </a>
+                    National Bank</h4><hr>
+                    <ul>
+                       <li>Account Name : Isaac Kakodwa</li>
+                       <li>Branch : Lilongwe</li>
+                       <li>Account Number <strong>1004820758</strong>.</li>
+                    </ul><hr>
+                    <p><strong>Using the reference number / transaction number of the payment mediums above kindly complete the form.</strong></p> 
+                     </div>
+                 </section>
+             </div>
+             <div class="col-lg-6">
+                 <div>
+                    <div><h4>Total Amount MK {{total}}</h4></div><br>
+                    <form action="{% url 'payment-success' %}" method="POST">
+                        {% csrf_token %}
+                       <div class="form-group">
+                           <select name="mobile" class="form-control">
+                                <option value="NTM">TNM Mpamba</option>
+                                <option value="AIRTEL">Airtel Money</option>
+                                <option value="NB">National Bank</option>
+                           </select>
+                       </div>
+                       <div style="display:none;" class="form-group">
+                            <input required type="text" class="form-control" value="{{total}}" id="name" name="amount" placeholder="Account name" required data-error="Please enter your name">
+                        </div>
+                       <div class="form-group">
+                            <input required type="text" class="form-control" id="name" name="name" placeholder="Account name" required data-error="Please enter your name">
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" class="form-control" id="name" name="reference" placeholder="Reference number" required data-error="Please enter your name">
+                        </div>
+                         <button type="submit" class="btn-one">Make payment</button>  
+                    </form>
+                    
+                 </div>
+             </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'ik/base2.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+        <!--Start login register area-->
+        <section class="login-register-area">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-xl-2 col-lg-12 col-md-12 col-sm-12">
+                        
+                    </div>
+                    <div style="background-color:#e9212e;" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 p-4">
+                        <div class="form">
+                            <div class="shop-page-title">
+                                <div class="title">Login <span>Now</span></div>
+                            </div>
+                            <div class="row">
+                                <form action="#" method="post">
+                                    {% csrf_token %}
+                                    <div class="col-xl-12">
+                                        <div class="input-field">
+                                            {% render_field form.username class="form-control" placeholder="Username" autocomplete="off" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xl-12">
+                                        <div class="input-field">
+                                            {% render_field form.password class="form-control" placeholder="Password" %}
+                                            <div class="icon-holder">
+                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                <button style="border:2px solid #27282c;" class="btn-one" type="submit">Login Now</button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color:#27282c;color:white;" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 p-4">
+                        <div  class="text-center p-4">
+                            <h1 style="color:white;"><strong>Hello, Friend!</strong></h1><br>
+                            <p>Enter your personal details and start journey with us</p><br>
+                            <a class="btn-one" href="/customersignup">Sign Up</a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End login register area-->
+{% endblock content %}

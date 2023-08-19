@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- index 06:41:43 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <title>IKpixels</title>
+
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="{% static 'ik/css/style1.css' %}">
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="{% static 'ik/css/responsive.css' %}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ik/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'ik/images/favicon/favicon.ico' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'ik/images/favicon/favicon.ico' %}" sizes="16x16">
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=630b474c0b5e930012a9c33b&product=inline-share-buttons" async="async"></script>
+
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+.Account{
+    color:white;
+    background: url("{% static 'ikpixels/images/hero-bg.jpg' %}") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.Account .layy{
+    background:rgb(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+ 
+}
+</style>
+
+    <section class="Account">
+        <div class="layy">
+             <div class="text-center">
+                 <div class="">
+                     <br><br><br>
+                    <a href="/">
+                         <img src="{% static 'ik/images/icon/home-3.png' %}">
+                    </a><hr>
+                    <h4 style="color:white;">IKPIXELS-TECH</h4>
+                 </div>
+             </div>
+             {% block content %}
+
+              {% endblock content %}
+              <br><br><br>
+        </div>
+    </section>
+
+    <script src="{% static 'ik/js/jquery.js' %}"></script>
+    <script src="{% static 'ik/js/appear.js' %}"></script>
+    <script src="{% static 'ik/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'ik/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'ik/js/isotope.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.enllax.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'ik/js/jquery.paroller.min.js' %}"></script>
+    <script src="{% static 'ik/js/owl.js' %}"></script>
+    <script src="{% static 'ik/js/validation.js' %}"></script>
+    <script src="{% static 'ik/js/wow.js' %}"></script>
+
+    <!---
+<script src="js/gmaps.js"></script>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
+<script src="js/mapapi.js"></script> 
+--->
+    <script src="{% static 'ik/js/map-helper.js' %}"></script>
+
+    <script src="{% static 'ik/assets/language-switcher/jquery.polyglot.language.switcher.js' %}"></script>
+    <script src="{% static 'ik/assets/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'ik/assets/html5lightbox/html5lightbox.js' %}"></script>
+
+    <!--Revolution Slider-->
+    <script src="{% static 'ik/plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.actions.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.carousel.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js'%}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'ik/plugins/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'ik/js/main-slider-script.js' %}"></script>
+
+    <!-- thm custom script -->
+    <script src="{%static 'ik/js/custom.js'%}"></script>
+    <script src="{%static 'ik/js/ajax.js'%}"></script>
+
+
+
+</body>
+
+
+<!-- index 06:41:43 GMT -->
+</html>

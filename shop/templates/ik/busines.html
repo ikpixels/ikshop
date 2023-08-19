@@ -1,0 +1,44 @@
+{% extends 'ikpixels/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Digital Marketing</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Marketig</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+
+<br><br><br>
+<section class="inner-page">
+      <div class="container">
+        <div class="row">
+  
+      <div class="col-sm-12 col-lg-6">
+        <p>We uses a range of strategies to reach customers, our aim is to tempt them into making a purchase,  or simply engage with your brand. Modern digital marketing comprises a broad system of channels, including:</p>
+        <ul class="p-4">
+            <li style="list-style-type:square;">Social media</li>
+            <li style="list-style-type:square;">Content marketing</li>
+            <li style="list-style-type:square;">Website marketing</li>
+            <li style="list-style-type:square;">SEO (search engine optimization)</li>
+        </ul>
+      </div>
+
+      <div class="col-sm-12 col-lg-6 animatedParent">
+        <img src="{% static 'ikpixels/images/bus.png' %}" class="d-block w-100 animated growIn">
+      </div>
+    </div>
+      </div>
+    </section>
+    {% include 'ikpixels/getstarted.html' %}
+{% endblock content %}
