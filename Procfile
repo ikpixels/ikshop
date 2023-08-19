@@ -1,1 +1,2 @@
-web: gunicorn ikshop.wsgi --log-file-
+web: gunicorn ikshop.wsgi
+web: npm run start
